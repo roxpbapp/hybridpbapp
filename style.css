@@ -1,0 +1,157 @@
+@font-face{font-family:Archivo;src:url("fonts/archivo.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{
+  --ink:#101114;--panel:#1b1d22;--raised:#22252c;--line:#2a2d34;--paper:#f5f6f8;--muted:#a5abb6;
+  --run:#00aaff;--zone:#c060ff;--station:#ff8c00;--hyrox:#2ec4b6;--gold:#ffc94d;--good:#3ddc84;
+  --display:Archivo,"Arial Narrow",system-ui,sans-serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--station)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--run);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding:22px 0}
+.top img{width:42px;height:42px;border-radius:10px}
+.top .name{font:800 21px/1 var(--display);font-stretch:110%;color:var(--paper);text-decoration:none}
+.top nav{margin-left:auto;display:flex;gap:22px;font-size:15px}
+.top nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.top nav a:hover{color:var(--paper)}
+
+/* type */
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em}
+h1{font-weight:900;font-stretch:118%;font-size:clamp(38px,5.6vw,70px);line-height:1}
+h2{font-weight:800;font-stretch:112%;font-size:clamp(28px,3.6vw,44px);line-height:1.05}
+h3{font-weight:700;font-stretch:106%;font-size:20px;line-height:1.2}
+p{margin:0}
+.lede{font-size:clamp(18px,1.6vw,21px);color:var(--muted);max-width:34em}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:center;padding:36px 0 72px}
+.hero h1 span{display:block;white-space:nowrap}
+.hero .lede{margin-top:22px}
+.status{margin-top:28px;display:inline-block;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:15px;color:var(--muted)}
+.fan{position:relative;height:600px}
+.fan .phone{position:absolute;top:0}
+.fan .phone:nth-child(1){left:2%;top:54px;transform:rotate(-6deg) scale(.86);transform-origin:bottom left;opacity:.9}
+.fan .phone:nth-child(3){right:2%;top:54px;transform:rotate(6deg) scale(.86);transform-origin:bottom right;opacity:.9}
+.fan .phone:nth-child(2){left:50%;transform:translateX(-50%);z-index:2}
+
+/* the four kinds of session */
+.kinds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kinds div{padding:26px 22px 28px;border-left:1px solid var(--line)}
+.kinds div:first-child{border-left:0;padding-left:0}
+.kinds h3{display:flex;align-items:center;gap:10px}
+.kinds h3::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--c)}
+.kinds p{color:var(--muted);font-size:15.5px;margin-top:8px}
+
+/* feature rows */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center;padding:84px 0 0}
+.feature.flip{grid-template-columns:300px minmax(0,1fr)}
+.feature.flip .phone{order:-1}
+.feature p{color:var(--muted);margin-top:16px;max-width:32em}
+.feature ul{list-style:none;padding:0;margin:22px 0 0;max-width:34em}
+.feature li{padding:11px 0;border-top:1px solid var(--line);font-size:16px}
+.feature li b{font-weight:600;color:var(--paper)}
+.feature li span{color:var(--muted)}
+
+/* sources */
+.sources{margin-top:96px;padding:44px 0;border-top:1px solid var(--line)}
+.sources .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:28px}
+.sources h3{font-size:18px}
+.sources p{color:var(--muted);font-size:15.5px;margin-top:6px}
+.sources .lede{margin-top:14px}
+
+/* RoxPB band: its own look, black like the watch face */
+.roxpb{margin-top:64px;background:#000;border-radius:28px;padding:48px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.roxpb .brand{display:flex;align-items:center;gap:14px;font:800 24px/1 var(--display);font-stretch:112%}
+.roxpb .brand img{width:56px;height:56px;border-radius:13px}
+.roxpb h2{margin-top:24px}
+.roxpb p{color:var(--muted);margin-top:14px;max-width:30em}
+.roxpb dl{display:flex;gap:36px;margin:26px 0 0;flex-wrap:wrap}
+.roxpb dt{font-size:13.5px;color:var(--muted)}
+.roxpb dd{margin:2px 0 0;font:800 30px/1.1 var(--display);font-stretch:108%;font-variant-numeric:tabular-nums}
+.roxpb dd.ahead{color:#00ff3c}
+.roxpb .go{display:inline-block;margin-top:28px;background:var(--station);color:#1a0e00;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:999px}
+.roxpb .watches{display:flex;gap:18px}
+.roxpb .watches img{width:210px;height:210px}
+.roxpb .fine{font-size:13.5px;margin-top:18px}
+
+/* privacy strip and footer */
+.yours{padding:72px 0 0;max-width:40em}
+.yours p{color:var(--muted);margin-top:14px}
+footer{border-top:1px solid var(--line);margin-top:72px;padding:26px 0 44px;color:var(--muted);font-size:14.5px}
+footer p+p{margin-top:8px}
+
+/* privacy page */
+.policy{max-width:44em;padding-bottom:20px}
+.policy h1{font-size:clamp(34px,5vw,54px);margin-top:28px}
+.policy h2{font-size:22px;font-stretch:106%;margin-top:38px}
+.policy p,.policy li{color:#d9dce2;margin-top:10px}
+.policy ul{padding-left:20px;margin:6px 0 0}
+.policy .date{color:var(--muted);font-size:15px}
+
+/* ---------- phone mock-ups: the app's own screens, drawn in HTML ---------- */
+.phone{width:300px;border-radius:38px;background:#000;padding:9px;box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 1px #2c2f36}
+.screen{background:var(--ink);border-radius:30px;padding:16px 14px 10px;height:560px;overflow:hidden;font:11.5px/1.35 var(--body);display:flex;flex-direction:column}
+.screen .title{font:800 21px/1 var(--display);font-stretch:108%;margin:6px 0 12px}
+.screen .sec{font:700 9.5px/1 var(--body);letter-spacing:.08em;color:var(--muted);margin:13px 0 6px}
+.screen .card{background:var(--panel);border-radius:11px;padding:9px 10px}
+.screen .card+.card{margin-top:6px}
+.screen .dim{color:var(--muted)}
+.screen .big{font:800 15px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.screen .row{display:flex;align-items:center;gap:8px}
+.screen .row .grow{flex:1;min-width:0}
+.screen .num{font-variant-numeric:tabular-nums;font-weight:600}
+.tabs{margin-top:auto;display:flex;justify-content:space-between;padding:9px 4px 2px;border-top:1px solid var(--line);font-size:9px;color:var(--muted)}
+.tabs b{color:var(--paper);font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--panel);border-radius:11px;overflow:hidden;text-align:center}
+.tiles div{padding:9px 2px}
+.tiles div.on{background:#12314a}
+.tiles .big{font-size:17px}
+.tiles small{display:block;font-size:8.5px;color:var(--muted);margin-top:2px}
+.dot{width:8px;height:8px;border-radius:2px;background:var(--c);flex:none}
+.chips{display:flex;gap:6px;margin:10px 0 0}
+.chips span{border:1px solid var(--line);border-radius:7px;padding:4px 9px;color:var(--muted)}
+.chips span.on{background:#12314a;border-color:#12314a;color:var(--paper)}
+.bars{display:flex;align-items:flex-end;gap:5px;height:62px;margin-top:8px}
+.bars i{flex:1;border-radius:3px 3px 0 0;background:var(--c);height:var(--h)}
+.table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.table th{font-weight:700;font-size:9px;color:var(--muted);text-align:left;padding:2px 0}
+.table td{padding:4px 0;font-weight:600;font-size:12.5px}
+.table .r,.table th.r{text-align:right}
+.tick{width:17px;height:17px;border-radius:50%;background:var(--good);display:inline-block}
+.tick.off{background:var(--raised)}
+.pill{display:inline-block;background:#3a2600;color:var(--gold);border-radius:6px;padding:1px 6px;font-size:9.5px;font-weight:700}
+.trophy{color:var(--gold)}
+.timer{background:#12314a;border-radius:11px;padding:9px 10px;margin-top:8px}
+.timer .big{font-size:20px}
+.orange{color:var(--station)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-bottom:40px}
+  .fan{height:auto;display:flex;justify-content:center}
+  .fan .phone{position:static;transform:none!important}
+  .fan .phone:nth-child(1),.fan .phone:nth-child(3){display:none}
+  .kinds{grid-template-columns:1fr 1fr}
+  .kinds div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .kinds div:nth-child(-n+2){border-top:0}
+  .kinds div:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+  .feature,.feature.flip{grid-template-columns:1fr;gap:32px;padding-top:64px}
+  .feature .phone,.feature.flip .phone{order:2;margin:0 auto}
+  .sources .cols{grid-template-columns:1fr 1fr}
+  .roxpb{grid-template-columns:1fr;padding:32px 24px}
+  .roxpb .watches img{width:150px;height:150px}
+}
+@media (max-width:480px){.top nav a:first-child{display:none}.top nav{gap:16px}.kinds{grid-template-columns:1fr}.kinds div,.kinds div:nth-child(even){padding-left:0;border-left:0;border-top:1px solid var(--line)}.kinds div:first-child{border-top:0}.kinds div:nth-child(2){border-top:1px solid var(--line)}.sources .cols{grid-template-columns:1fr}.phone{width:280px}}
+
+.screen .btn{font-size:9.5px;font-weight:700;padding:5px 9px;border-radius:999px;background:var(--station);color:#101114}
+.screen .btn.ghost{background:none;color:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.screen .folder{display:flex;align-items:center;gap:7px;padding:7px 9px;margin-top:7px;border-radius:9px;background:#23262d;font-size:11px}
+.screen .fi{width:13px;height:10px;border-radius:2px;background:var(--station);position:relative;flex:none}
+.screen .fi:before{content:"";position:absolute;left:0;top:-3px;width:6px;height:3px;border-radius:2px 2px 0 0;background:var(--station)}
+.screen .card.in{margin-left:12px}
+.screen .go{width:0;height:0;border-left:8px solid var(--station);border-top:5px solid transparent;border-bottom:5px solid transparent;flex:none}
+.screen .folder .grow{flex:1}
