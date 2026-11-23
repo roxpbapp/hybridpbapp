@@ -65,19 +65,6 @@ p{margin:0}
 .sources .lede{margin-top:14px}
 
 /* RoxPB band: its own look, black like the watch face */
-.roxpb{margin-top:64px;background:#000;border-radius:28px;padding:48px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
-.roxpb .brand{display:flex;align-items:center;gap:14px;font:800 24px/1 var(--display);font-stretch:112%}
-.roxpb .brand img{width:56px;height:56px;border-radius:13px}
-.roxpb h2{margin-top:24px}
-.roxpb p{color:var(--muted);margin-top:14px;max-width:30em}
-.roxpb dl{display:flex;gap:36px;margin:26px 0 0;flex-wrap:wrap}
-.roxpb dt{font-size:13.5px;color:var(--muted)}
-.roxpb dd{margin:2px 0 0;font:800 30px/1.1 var(--display);font-stretch:108%;font-variant-numeric:tabular-nums}
-.roxpb dd.ahead{color:#00ff3c}
-.roxpb .go{display:inline-block;margin-top:28px;background:var(--station);color:#1a0e00;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:999px}
-.roxpb .watches{display:flex;gap:18px}
-.roxpb .watches img{width:210px;height:210px}
-.roxpb .fine{font-size:13.5px;margin-top:18px}
 
 /* privacy strip and footer */
 .yours{padding:72px 0 0;max-width:40em}
@@ -130,6 +117,12 @@ footer p+p{margin-top:8px}
 .timer .big{font-size:20px}
 .orange{color:var(--station)}
 
+.roxpb{margin-top:96px}
+.roxpb p{color:var(--muted);margin-top:14px;max-width:44em}
+.roxpb .shot{display:block;margin-top:32px}
+.roxpb .shot img{display:block;width:100%;height:auto;border-radius:24px;box-shadow:0 0 0 1px var(--line)}
+.roxpb .shot .narrow{display:none}
+.roxpb .go{display:inline-block;margin-top:24px;background:var(--station);color:#1a0e00;font-weight:700;text-decoration:none;padding:13px 22px;border-radius:999px}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;padding-bottom:40px}
   .fan{height:auto;display:flex;justify-content:center}
@@ -142,9 +135,8 @@ footer p+p{margin-top:8px}
   .feature,.feature.flip{grid-template-columns:1fr;gap:32px;padding-top:64px}
   .feature .phone,.feature.flip .phone{order:2;margin:0 auto}
   .sources .cols{grid-template-columns:1fr 1fr}
-  .roxpb{grid-template-columns:1fr;padding:32px 24px}
-  .roxpb .watches img{width:150px;height:150px}
 }
+@media (max-width:640px){.roxpb .shot .wide{display:none}.roxpb .shot .narrow{display:block}.roxpb .shot .narrow+.narrow{margin-top:12px}}
 @media (max-width:480px){.top nav a:first-child{display:none}.top nav{gap:16px}.kinds{grid-template-columns:1fr}.kinds div,.kinds div:nth-child(even){padding-left:0;border-left:0;border-top:1px solid var(--line)}.kinds div:first-child{border-top:0}.kinds div:nth-child(2){border-top:1px solid var(--line)}.sources .cols{grid-template-columns:1fr}.phone{width:280px}}
 
 .screen .btn{font-size:9.5px;font-weight:700;padding:5px 9px;border-radius:999px;background:var(--station);color:#101114}
